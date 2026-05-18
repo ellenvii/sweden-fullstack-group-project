@@ -1,7 +1,11 @@
 import UserRole from "../user-role/userRole"
 
-type UserDto = {
-	id: number
+type SectionUserCreate = {
+	// From joins
+	/**
+	 * If landlord only student and section_admin is permitted, otherwise throw error
+	 */
+	role: UserRole
 	email: string
 	firstName: string
 	lastName: string
@@ -10,12 +14,6 @@ type UserDto = {
 	stayPeriodStart: Date
 	stayPeriodEnd: Date
 	profilePictureUrl?: string
-
-	// From joins
-	role?: UserRole
-	roleId?: number
-	sectionId?: number
-	buildingId?: number
 }
 
-export default UserDto
+export default SectionUserCreate
